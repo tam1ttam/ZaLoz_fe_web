@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../redux/slices/authSlice";
+import { authSelector } from "../redux/selector";
 
 const LoginPage = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const auth = useSelector(authSelector);
     const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
 
@@ -16,6 +19,20 @@ const LoginPage = () => {
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     };
+
+    // Theo dõi trạng thái đăng nhập và chuyển hướng khi thành công
+    useEffect(() => {
+        if (auth?.user && auth?.tokens?.accessToken) {
+            // Kiểm tra xem user có mật khẩu chưa
+            if (auth.user.is_has_password === false) {
+                // Nếu chưa có mật khẩu, chuyển đến trang cập nhật thông tin
+                navigate("/update-info");
+            } else {
+                // Nếu đã có mật khẩu, chuyển đến trang chủ
+                navigate("/");
+            }
+        }
+    }, [auth, navigate]);
 
     const handleSubmit = (event) => {
         event.preventDefault();

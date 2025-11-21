@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import countries from "../core/country_code";
 import { useNavigate, Link } from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../redux/slices/authSlice";
+import { authSelector } from "../redux/selector";
 
 function RegisterPage() {
     const dispatch = useDispatch();
+    const auth = useSelector(authSelector);
     const [selectedCountry, setSelectedCountry] = useState(countries[0]);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -33,6 +35,13 @@ function RegisterPage() {
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
+
+    // Kiểm tra nếu register thành công
+    useEffect(() => {
+        if (auth.tokens?.accessToken && auth.tokens?.refreshToken) {
+            navigate("/update-info");
+        }
+    }, [auth.tokens, navigate]);
 
     const validateForm = () => {
         const newErrors = {
@@ -77,13 +86,13 @@ function RegisterPage() {
     const handleRegister = (e) => {
         e.preventDefault();
         if (validateForm()) {
+            // Gửi request signup, backend sẽ trả về tokens ngay lập tức
             dispatch(
                 signUp({
                     phone: phoneNumber,
                     password
                 })
             );
-            navigate("/otp", { state: { prevPage: "register" } });
         }
     };
 
@@ -98,9 +107,8 @@ function RegisterPage() {
                 <form onSubmit={handleRegister}>
                     <div className="mb-4">
                         <div
-                            className={`flex items-center border ${
-                                errors.phone ? "border-red-500" : "border-gray-300"
-                            } rounded-lg px-3 py-2 bg-gray-50`}
+                            className={`flex items-center border ${errors.phone ? "border-red-500" : "border-gray-300"
+                                } rounded-lg px-3 py-2 bg-gray-50`}
                         >
                             {/* Country dropdown */}
                             <div className="relative" ref={dropdownRef}>
@@ -147,9 +155,8 @@ function RegisterPage() {
 
                     <div className="mb-4">
                         <div
-                            className={`flex items-center border ${
-                                errors.password ? "border-red-500" : "border-gray-300"
-                            } rounded-lg px-3 py-2 bg-gray-50`}
+                            className={`flex items-center border ${errors.password ? "border-red-500" : "border-gray-300"
+                                } rounded-lg px-3 py-2 bg-gray-50`}
                         >
                             <input
                                 type={showPassword ? "text" : "password"}
@@ -207,9 +214,8 @@ function RegisterPage() {
 
                     <div className="mb-4">
                         <div
-                            className={`flex items-center border ${
-                                errors.confirmPassword ? "border-red-500" : "border-gray-300"
-                            } rounded-lg px-3 py-2 bg-gray-50`}
+                            className={`flex items-center border ${errors.confirmPassword ? "border-red-500" : "border-gray-300"
+                                } rounded-lg px-3 py-2 bg-gray-50`}
                         >
                             <input
                                 type={showConfirmPassword ? "text" : "password"}

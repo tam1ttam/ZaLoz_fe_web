@@ -118,7 +118,7 @@ function OTPVerificationPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50">
             <div className="text-center mb-8">
-                <h1 className="text-5xl font-bold text-blue-600 font-serif">Lochat</h1>
+                <h1 className="text-5xl font-bold text-blue-600 font-serif">ZaLoz</h1>
                 <p className="text-gray-600 mt-2">Xác thực tài khoản của bạn</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
@@ -156,11 +156,10 @@ function OTPVerificationPage() {
                         <button
                             onClick={handleResendCode}
                             disabled={!canResend}
-                            className={`text-sm ${
-                                canResend
+                            className={`text-sm ${canResend
                                     ? "text-blue-600 hover:underline cursor-pointer"
                                     : "text-gray-400 cursor-not-allowed"
-                            }`}
+                                }`}
                         >
                             Gửi lại mã {!canResend && `(${timer}s)`}
                         </button>

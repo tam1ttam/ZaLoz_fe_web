@@ -40,11 +40,11 @@ function OrLogin() {
 
     return (
         <div className="flex flex-col items-center gap-4 mt-10">
-            <h1 className="text-5xl font-bold text-blue-600 font-serif mb-4">Lochat</h1>
+            <h1 className="text-5xl font-bold text-blue-600 font-serif mb-4">ZaLoz</h1>
 
             <h2 className="text-center text-gray-600 text-base mb-6 leading-5 font-semibold">
-                Đăng nhập tài khoản Lochat <br />
-                để kết nối với ứng dụng Lochat Web
+                Đăng nhập tài khoản ZaLoz <br />
+                để kết nối với ứng dụng ZaLoz Web
             </h2>
             {sessionId && <QRCodeSVG value={sessionId} size={200} />}
 

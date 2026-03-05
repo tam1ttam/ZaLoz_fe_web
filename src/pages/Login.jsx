@@ -49,11 +49,11 @@ const LoginPage = () => {
 
     return (
         <div className="min-h-screen bg-[#e6efff] flex flex-col items-center justify-center">
-            <h1 className="text-5xl font-bold text-blue-600 font-serif mb-4">Lochat</h1>
+            <h1 className="text-5xl font-bold text-blue-600 font-serif mb-4">ZaLoz</h1>
 
             <h2 className="text-center text-gray-600 text-base mb-6 leading-5 font-semibold">
-                Đăng nhập tài khoản Lochat <br />
-                để kết nối với ứng dụng Lochat Web
+                Đăng nhập tài khoản ZaLoz <br />
+                để kết nối với ứng dụng ZaLoz Web
             </h2>
 
             <div className="bg-white p-6 pt-6 rounded-xl shadow-md w-[500px] h-[500px]">
@@ -86,9 +86,8 @@ const LoginPage = () => {
                     <div className="mx-auto w-[60%]">
                         <button
                             type="submit"
-                            className={`w-full py-2 rounded-md font-semibold text-sm ${
-                                isFormValid ? "bg-[#2196f3] hover:bg-[#1c84dd] text-white" : "bg-gray-300 text-gray-500"
-                            }`}
+                            className={`w-full py-2 rounded-md font-semibold text-sm ${isFormValid ? "bg-[#2196f3] hover:bg-[#1c84dd] text-white" : "bg-gray-300 text-gray-500"
+                                }`}
                             disabled={!isFormValid}
                         >
                             Đăng nhập với mật khẩu
@@ -116,7 +115,7 @@ const LoginPage = () => {
                     <img src="https://stc-zlogin.zdn.vn/images/banner_icon.svg" alt="Zalo PC" className="w-15 h-15" />
                     <div className="flex-1">
                         <strong className="text-sm leading-4 text-gray-800">
-                            Nâng cao hiệu quả công việc với Lochat
+                            Nâng cao hiệu quả công việc với ZaLoz
                         </strong>
                         <p className="text-sm leading-4 text-gray-800">
                             Gửi file lớn lên đến 1 GB, chụp màn hình, gọi video và nhiều tiện ích hơn nữa

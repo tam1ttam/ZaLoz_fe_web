@@ -25,8 +25,8 @@ const ForgotPassword = () => {
         <div className="min-h-screen bg-[#e6efff] flex flex-col items-center justify-center">
             <h1 className="text-5xl font-bold text-blue-600 font-serif mb-4">ZaLoz</h1>
             <h2 className="text-center text-gray-600 text-base mb-6 leading-5 font-semibold">
-                Khôi phục mật khẩu Zalo <br />
-                để kết nối với ứng dụng Zalo Web
+                Khôi phục mật khẩu ZaLoz <br />
+                để kết nối với ứng dụng ZaLoz Web
             </h2>
 
             <div className="bg-white p-6 pt-6 rounded-xl shadow-md w-[400px]">
@@ -48,8 +48,8 @@ const ForgotPassword = () => {
                         <button
                             type="submit"
                             className={`w-full py-3 rounded-md font-semibold text-sm ${isPhoneValid
-                                    ? "bg-[#2196f3] hover:bg-[#1c84dd] text-white"
-                                    : "bg-gray-300 text-gray-500"
+                                ? "bg-[#2196f3] hover:bg-[#1c84dd] text-white"
+                                : "bg-gray-300 text-gray-500"
                                 }`}
                             disabled={!isPhoneValid}
                         >

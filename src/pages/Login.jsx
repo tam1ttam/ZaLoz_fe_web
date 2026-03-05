@@ -112,7 +112,7 @@ const LoginPage = () => {
                 </div>
 
                 {/* <div className="mt-10 border p-3 rounded-lg flex items-center gap-3 bg-[#f1f7ff]">
-                    <img src="https://stc-zlogin.zdn.vn/images/banner_icon.svg" alt="Zalo PC" className="w-15 h-15" />
+                    <img src="https://stc-zlogin.zdn.vn/images/banner_icon.svg" alt="ZaLoz PC" className="w-15 h-15" />
                     <div className="flex-1">
                         <strong className="text-sm leading-4 text-gray-800">
                             Nâng cao hiệu quả công việc với ZaLoz

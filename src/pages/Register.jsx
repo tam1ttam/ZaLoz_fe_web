@@ -287,7 +287,7 @@ function RegisterPage() {
                                 <a href="#" className="text-blue-600 hover:underline">
                                     Điều khoản sử dụng
                                 </a>{" "}
-                                của Zalo
+                                của ZaLoz
                             </label>
                         </div>
                         {errors.terms && <p className="text-red-500 text-sm mt-1">{errors.terms}</p>}

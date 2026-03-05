@@ -106,12 +106,12 @@ const LoginPage = () => {
                         </div>
                     </div>
 
-                    <div className="text-blue-600 mt-10 hover:underline cursor-pointer mt-2 font-medium">
+                    {/* <div className="text-blue-600 mt-10 hover:underline cursor-pointer mt-2 font-medium">
                         <Link to="/qr-login">Đăng nhập qua mã QR</Link>
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className="mt-10 border p-3 rounded-lg flex items-center gap-3 bg-[#f1f7ff]">
+                {/* <div className="mt-10 border p-3 rounded-lg flex items-center gap-3 bg-[#f1f7ff]">
                     <img src="https://stc-zlogin.zdn.vn/images/banner_icon.svg" alt="Zalo PC" className="w-15 h-15" />
                     <div className="flex-1">
                         <strong className="text-sm leading-4 text-gray-800">
@@ -126,13 +126,13 @@ const LoginPage = () => {
                             Tải ngay
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>
 
-            <div className="text-center mt-6 text-sm text-gray-500">
+            {/* <div className="text-center mt-6 text-sm text-gray-500">
                 <span className="hover:underline cursor-pointer mr-2">Tiếng Việt</span> |{" "}
                 <span className="hover:underline cursor-pointer ml-2">English</span>
-            </div>
+            </div> */}
         </div>
     );
 };
